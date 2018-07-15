@@ -1,12 +1,38 @@
-let firstName = 'John';
-let lastName = 'Linquist';
 
-let person = {firstName, lastName};
+// The old way would be ES5
 
-console.log(person);
+// var color = "red";
+// var speed = 10;
+//
+// var car = {color:color, speed:speed};
+//
+// console.log(car.color);
+// console.log(car.speed)
 
-let mascot = "Moose";
+// ES6 treats this in this manner
+var color = "red";
+var speed = 10;
+var drive = "go";
 
-let team = {person, mascot};
+// var car = {
+//   color,
+//   speed,
+//   go() {
+//     console.log("vroom");
+//   }
+// };
 
-console.log(team);
+//computed property
+var car = {
+  color,
+  speed,
+  [drive]: function () {
+    console.log("vroom");
+  }
+};
+
+//
+
+console.log(car.color);
+console.log(car.speed)
+car.go();
