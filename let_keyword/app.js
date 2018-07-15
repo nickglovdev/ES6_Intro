@@ -1,66 +1,49 @@
-var createGreeting = function(message, name){
-  return message + name;
+
+// XXX OG
+/* var message = "hi";
+// {
+//   var message = "bye";
+// }
+ console.log(message); */
+
+// XXX With Let
+/* let message = "hi";
+// {
+//   let message = "bye";
+// }
+ console.log(message); */
+
+//XXX let in a loop
+var fs = [];
+
+// Run without let it will just say 10 over and over with let it will go through 1-9
+/*for(let i=0; i < 10; i++) {
+  fs.push(function() {
+    console.log(i);
+  })
 }
 
-//Regular
-var arrowGreeting = (message, name) => {
-  return message + name;
-}
+fs.forEach(function (f){
+  f();
+}) */
 
-// no line
-var arrowGreeting = (message, name) => message + name;
+//
 
-// One parameter
-var arrowGreeting = message => message;
 
-var squared = x => x * x;
 
-//XXX OG
-var deliveryBoy = {
-  name: "John",
+function letFunc(){
+  let previous = 0;
+  let current = 1;
 
-  handleMessage: function (message, handler) {
-    handler(message);
-  },
-
-  receive: function () {
-    var that = this;
-
-    this.handleMessage("Hello, ", function(message) {
-      that.name //get the proper name
-
-      console.log(message + that.name);
-    })
+  for(let i = 0; i < 10; i+=1){
+    let temp = previous;
+    previous = current;
+    current = temp + current;
   }
 }
-deliveryBoy.receive();
 
-// XX Tranform simple
-var deliveryBoy = {
-  name: "John",
-
-  handleMessage: function (message, handler) {
-    handler(message);
-  },
-
-  receive: function () {
-    this.handleMessage("Hello, ", (message) => {
-      console.log(message + this.name);
-    })
-  }
-}
-deliveryBoy.receive();
-
-//XXX Best
-var deliveryBoy = {
-  name: "John",
-
-  handleMessage: function (message, handler) {
-    handler(message);
-  },
-
-  receive: function () {
-    this.handleMessage("Hello, ", message => console.log(message + this.name))
-  }
-}
-deliveryBoy.receive();
+/* let allows you to declare variables that are limited in scope to the block,
+statement, or expression on which it is used. This is unlike the var
+keyword, which defines a variable globally, or locally to an entire
+function regardless of block scope. An explanation of why the name
+"let" was chosen can be found here. *?
