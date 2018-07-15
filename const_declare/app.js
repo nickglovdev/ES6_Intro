@@ -6,7 +6,7 @@
 
 // XXX 2. With ES6
 
-// const value = 'hello world';
+// const value = 'xehello world';
 // VALUE ='foo bar';
 // console.log('value: ', value);
 
